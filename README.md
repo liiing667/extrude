@@ -2,7 +2,7 @@
 
 Analyse binaries for missing security features, information disclosure and more.
 
-:construction: Extrude is in the early stages of development, and currently only supports ELF and MachO binaries. PE (Windows) binaries will be supported soon.
+Extrude is in the early stages of development, and currently supports ELF, MachO and PE/COFF binaries.
 
 ![Screenshot](screenshot.png)
 
@@ -48,11 +48,13 @@ docker run -v `pwd`:/blah -it ghcr.io/liamg/extrude /blah/targetfile
 
 ### Windows
 
-_Coming soon..._
+- ASLR (DYNAMIC_BASE)
+- DEP (NX_COMPAT)
+- Control Flow Guard (GUARD_CF)
+- Stack Buffer Overrun Detection (/GS)
+- Structured Exception Handler Protection (SafeSEH / NO_SEH)
 
 ## TODO
 
-- Add support for PE
 - Add secret scanning
 - Detect packers
-

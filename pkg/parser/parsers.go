@@ -6,6 +6,7 @@ import (
 	"github.com/liamg/extrude/pkg/format"
 	"github.com/liamg/extrude/pkg/parser/elf"
 	"github.com/liamg/extrude/pkg/parser/macho"
+	"github.com/liamg/extrude/pkg/parser/pe"
 	"github.com/liamg/extrude/pkg/report"
 )
 
@@ -18,4 +19,5 @@ var parsers = make(map[format.Format]Parser)
 func init() {
 	parsers[format.ELF] = elf.New()
 	parsers[format.MachO] = macho.New()
+	parsers[format.PE] = pe.New()
 }
